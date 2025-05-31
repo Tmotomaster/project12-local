@@ -9,6 +9,9 @@ public class GlobalSettings : MonoBehaviour
     public int maxHp;
     public float worldSize;
 
+    [Header("Dynamic Variables")]
+    public bool modalOpen;
+
     public static float RealArctan(Vector2 vec)
     {
         if (vec.x == 0 && vec.y == 0) return 0f;

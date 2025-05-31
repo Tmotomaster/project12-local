@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class RetryConnection : MonoBehaviour
 {
+    [SerializeField] private GlobalSettings globalSettings;
     [SerializeField] private GameMaster gameMaster;
 
     private bool mouseOver = false;
@@ -30,7 +31,7 @@ public class RetryConnection : MonoBehaviour
     
     void OnMouseUp()
     {
-        if (mouseOver)
+        if (mouseOver && !globalSettings.modalOpen)
         {
             gameMaster.retries = 0;
         }

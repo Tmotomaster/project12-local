@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class RespawnScript : MonoBehaviour
 {
+    [SerializeField] private GlobalSettings globalSettings;
     [SerializeField] private GameMaster gameMaster;
     [SerializeField] private PacketSender sender;
     [SerializeField] private ButtonLogic buttonLogic;
@@ -20,7 +21,7 @@ public class RespawnScript : MonoBehaviour
     
     void OnMouseUp()
     {
-        if (mouseOver && !buttonLogic.disabled)
+        if (mouseOver && !buttonLogic.disabled && !globalSettings.modalOpen)
         {
             if (gameMaster.playerId != -1 && gameMaster.playerHp <= 0)
             {
