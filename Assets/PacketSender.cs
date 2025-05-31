@@ -5,7 +5,6 @@ using UnityEngine;
 public class PacketSender : MonoBehaviour
 {
     [SerializeField] private PacketReceiver packetReceiver;
-    public int serverPort = 13377;
 
     private UdpClient udpClient;
 
