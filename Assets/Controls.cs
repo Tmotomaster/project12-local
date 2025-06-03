@@ -24,21 +24,33 @@ public class Controls : MonoBehaviour
         {
             gameMaster.selfPlayer.GetComponent<PlayerLogic>().shooting = false;
         }
+
+        // Movement
+        Vector3 movement = Vector3.zero;
         if (Input.GetKey(KeyCode.W))
         {
-            gameMaster.selfPlayer.transform.position += globalSettings.playerSpeed * Time.deltaTime * Vector3.up;
+            // gameMaster.selfPlayer.transform.position += globalSettings.playerSpeed * Time.deltaTime * Vector3.up;
+            movement.y += 1;
         }
         if (Input.GetKey(KeyCode.S))
         {
-            gameMaster.selfPlayer.transform.position -= globalSettings.playerSpeed * Time.deltaTime * Vector3.up;
+            // gameMaster.selfPlayer.transform.position -= globalSettings.playerSpeed * Time.deltaTime * Vector3.up;
+            movement.y -= 1;
         }
         if (Input.GetKey(KeyCode.A))
         {
-            gameMaster.selfPlayer.transform.position -= globalSettings.playerSpeed * Time.deltaTime * Vector3.right;
+            // gameMaster.selfPlayer.transform.position -= globalSettings.playerSpeed * Time.deltaTime * Vector3.right;
+            movement.x -= 1;
         }
         if (Input.GetKey(KeyCode.D))
         {
-            gameMaster.selfPlayer.transform.position += globalSettings.playerSpeed * Time.deltaTime * Vector3.right;
+            // gameMaster.selfPlayer.transform.position += globalSettings.playerSpeed * Time.deltaTime * Vector3.right;
+            movement.x += 1;
+        }
+        if (movement != Vector3.zero)
+        {
+            movement.Normalize();
+            gameMaster.selfPlayer.transform.position += globalSettings.playerSpeed * Time.deltaTime * movement;
         }
         gameMaster.selfPlayer.transform.position = new Vector3(
             Mathf.Clamp(gameMaster.selfPlayer.transform.position.x, -globalSettings.worldSize, globalSettings.worldSize),

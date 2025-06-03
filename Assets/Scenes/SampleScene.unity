@@ -2632,7 +2632,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9435de2e08030fb469f4d88c4dd60917, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  serverLevel: 0
+  serverLevel: 1
   playerColors:
   - {r: 0, g: 0.5019608, b: 1, a: 1}
   - {r: 1, g: 0, b: 0.2509804, a: 1}
@@ -2650,7 +2650,7 @@ MonoBehaviour:
   - {r: 0.5283019, g: 0, b: 0.016912749, a: 1}
   - {r: 0.3654491, g: 0.5294118, b: 0, a: 1}
   - {r: 0.1509434, g: 0.1509434, b: 0.1509434, a: 1}
-  playerSpeed: 4
+  playerSpeed: 6
   maxHp: 100
   worldSize: 20
   modalOpen: 0
